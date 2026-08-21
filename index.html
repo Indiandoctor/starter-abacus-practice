@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff8e8">
+  <meta name="description" content="A free, private, beginner-friendly abacus calculation practice game.">
+  <title>Starter Abacus Sprint</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to game</a>
+  <main id="main" class="shell">
+    <section id="home-screen" class="screen" aria-labelledby="game-title">
+      <div class="hero panel">
+        <div class="brand-copy">
+          <p class="eyebrow">Ready • Steady • Calculate!</p>
+          <h1 id="game-title">Starter Abacus <span>Sprint</span></h1>
+          <p class="lede">A calm, quick practice game for beginner abacus calculations.</p>
+          <ul class="instructions">
+            <li><strong>4</strong> numbers in each question</li>
+            <li>Calculate from <strong>top to bottom</strong></li>
+            <li>Type the result and press <strong>Enter</strong></li>
+            <li>Complete as many as you can in <strong>7 minutes</strong></li>
+            <li>There are <strong>100 questions</strong></li>
+          </ul>
+          <label class="name-label" for="child-name">Player name <span>(optional, stays on this device)</span></label>
+          <input id="child-name" class="name-input" type="text" maxlength="24" autocomplete="off" placeholder="Your name">
+          <button id="start-button" class="primary-button" type="button">Start Practice</button>
+          <p class="privacy-note">No sign-in, tracking, or data upload. Refreshing during a round starts it over.</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="abacus">
+            <i></i><i></i><i></i><i></i><i></i>
+            <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b><b class="b5"></b><b class="b6"></b><b class="b7"></b><b class="b8"></b><b class="b9"></b><b class="b10"></b>
+          </div>
+          <div class="example-card">
+            <span>Try this example</span>
+            <div class="mini-sum" aria-label="Example: 6 plus 2 minus 3 plus 1 equals 6">
+              <b>6</b><b>+2</b><b>−3</b><b>+1</b><hr><strong>6</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="saved-summary" class="saved-summary panel" hidden></div>
+      <button id="clear-results" class="text-button" type="button" hidden>Clear Saved Results</button>
+    </section>
+
+    <section id="play-screen" class="screen" hidden aria-labelledby="question-heading">
+      <header class="game-header panel">
+        <div><span class="stat-label">Question</span><strong id="question-count">1 of 100</strong></div>
+        <div><span class="stat-label">Submitted</span><strong id="submitted-count">0</strong></div>
+        <div><span class="stat-label">Correct</span><strong id="correct-count">0</strong></div>
+        <div id="timer-wrap" class="timer-wrap"><span class="stat-label">Time left</span><strong id="timer">07:00</strong></div>
+      </header>
+      <div class="progress-track" role="progressbar" aria-label="Round progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progress-fill"></span></div>
+      <div class="question-panel panel">
+        <p id="question-heading" class="keyboard-hint">Type answer <span aria-hidden="true">→</span> Enter</p>
+        <div id="operands" class="operands" aria-label="Calculation"></div>
+        <div class="calculation-line"></div>
+        <form id="answer-form" novalidate>
+          <label class="sr-only" for="answer-input">Answer</label>
+          <input id="answer-input" inputmode="numeric" pattern="[0-9]*" autocomplete="off" enterkeyhint="done" aria-describedby="input-help" maxlength="3">
+          <button class="submit-button" type="submit">Submit</button>
+          <span id="input-help" class="sr-only">Enter digits only, then press Enter.</span>
+        </form>
+      </div>
+      <p id="round-status" class="sr-only" aria-live="polite"></p>
+    </section>
+
+    <section id="results-screen" class="screen" hidden aria-labelledby="results-title">
+      <div class="results-hero panel">
+        <p class="eyebrow">Round complete</p>
+        <h2 id="results-title">Great practice!</h2>
+        <p id="combined-result" class="combined-result"></p>
+        <p id="encouragement"></p>
+      </div>
+      <div id="result-grid" class="result-grid"></div>
+      <div class="best-card panel"><span>Personal best</span><strong id="best-score"></strong><small>saved only on this device</small></div>
+      <div class="result-actions">
+        <button id="again-button" class="primary-button" type="button">Practice Again</button>
+        <button id="review-button" class="secondary-button" type="button">Review Mistakes</button>
+        <button id="home-button" class="secondary-button" type="button">Return to Home</button>
+      </div>
+    </section>
+
+    <section id="review-screen" class="screen" hidden aria-labelledby="review-title">
+      <div class="review-head panel"><div><p class="eyebrow">Learn and improve</p><h2 id="review-title">Mistake Review</h2><p id="review-summary"></p></div><button id="review-back" class="secondary-button" type="button">Back to Results</button></div>
+      <div id="review-list" class="review-list"></div>
+    </section>
+  </main>
+  <dialog id="clear-dialog"><form method="dialog"><h2>Clear saved results?</h2><p>This removes your best scores and recent round history from this device.</p><div><button value="cancel" class="secondary-button">Keep Results</button><button id="confirm-clear" value="confirm" class="danger-button">Clear Results</button></div></form></dialog>
+  <noscript>This game needs JavaScript enabled to create and score questions.</noscript>
+  <script src="game.js"></script>
+</body>
+</html>
