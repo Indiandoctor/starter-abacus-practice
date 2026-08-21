@@ -67,7 +67,7 @@
     return { valid: cancellations >= 20, reason: cancellations >= 20 ? '' : 'Too few cancellations', cancellations };
   }
   function showScreen(id) { screens.forEach(s => $(s).hidden = s !== id); window.scrollTo(0, 0); }
-  function formatOperand(v, index) { return index === 0 ? String(v) : v > 0 ? `+${v}` : `−${Math.abs(v)}`; }
+  function formatOperand(v) { return v > 0 ? String(v) : `−${Math.abs(v)}`; }
   function renderQuestion() {
     if (!running || current >= TOTAL) return;
     const q = questions[current];

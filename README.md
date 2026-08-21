@@ -8,7 +8,7 @@ This is an independent practice tool. It is not affiliated with or endorsed by U
 
 - Every practice set contains exactly 100 unique questions.
 - Every question has exactly four signed, nonzero, single-digit operands (`1` through `9` in magnitude).
-- The first operand is always positive. Later positive operands display `+`; negative operands display `−`.
+- The first operand is always positive. Positive operands display without a sign; negative operands display `−`.
 - Every intermediate running total and final answer is zero or greater.
 - Addition and subtraction are mixed, including questions with one, two, and three subtractions where valid.
 - At least 20 questions per set contain an opposite-sign cancellation pair such as `+3` and `−3`.
