@@ -4,6 +4,12 @@ Starter Abacus Sprint is a free, child-friendly browser game for practicing the 
 
 This is an independent practice tool. It is not affiliated with or endorsed by UCMAS, ALOHA, SIP Abacus, or any other abacus organization.
 
+## Play the game
+
+**▶ Play now: https://indiandoctor.github.io/starter-abacus-practice/**
+
+Opens in any modern browser. No download, account or sign-in needed.
+
 ## Arithmetic rules
 
 - Every practice set contains exactly 100 unique questions.
